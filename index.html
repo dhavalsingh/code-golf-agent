@@ -9,13 +9,28 @@
         font-family: "CommitMono";
         src: local("CommitMono"), local("CommitMono-Regular");
       }
+      @font-face {
+        font-family: "CommitMonoLoading";
+        src: url("data:font/woff2;charset=url-8;base64,d09GMk9UVE8AAAVoAAoAAAAACRAAAAUgAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAADYcqGhYGYACCcgE2AiQDIgQGBYQhByAbVAgRZJPTIvuRkLnpo1niWFGcZNnEK1FCUU4/x8PT2u/PnZ3dh6g3CJGQRBORpJVGg67f6q9Ns3ed4+/dNQeGD6Q1Nv+/r3HXBE48osgCyvt7NvUTYnINZZJwUNelEzGpqkxUH92fDB0zXaUP82xFMJQsXXOHVdpANttEIhM32xM/y6P+MHZhAh4hJxTKBbrhm89nfEyZeMKSimREp600nifplvNJJ34a/VkBz5F8L+EFZeCFSvKWUsig+NR/R0ZgyZDGIvDSwGSjyt9iLXIEIdUwnqN2Eiag0Go3YpZ2uyOTcHUKJe4KKRInfhZA3BH3KPTa1jUwMjW34E8oZC3tOm14RybSiV8CM8EswZ2BYK7G3WoT1eM4OBCww4CQ/0grvTR5bXZ2cnJ2ztqkpUvXrlvCqo+2rtrF72jXPnwM5x5SebwLrKI9x4/tO2lFSnl5RkqXP9vhF3Ul/HqgT++reCFN7bm85urm6zukd8WH8k80PNbBHMnbfi1Ygsk+Ewyn2MfivKuFiQ361vzVM1du3zn/BDf0iAjL9o2Z7Kaj8lzaxn2+WZ1am9An5uYS0pab2kJMyaNISGuk3cc/AwUa3/jsxbNaA1Zj1eQ+7hzYJknff3H9xQ2X10rviU83nGku0fFVXjj3lKRp3YzUkXqsdcIK7MlRebjPGywHbWdlRmsSq8ar2qD/nYftsKFtQpe269bK+0M6YduD7Q+pd0egDK7T4xblNzXn5TU15i0a6//gheO5RryXpn4MaUzfumjq+JV2jhNSy3PSk4u5wcn0rF1rF8/Uub+bADqw+Nr59fHICkywWC+mvh7ZsjskJtw/ONybOxYRfSpWD8SDuz8zjqTsjuUeteER4r7GX9u189IOPSYHDDabGjkvYx1XZeXVe3auX6lbE7Q5dh+rPn+TZ25+ASst7DVeZPWQegNkD97hJjbwq/CJoeD2h8EGMfUF5N3G9PKkdZlZiUm69/rEZcvXrV+2kBPb+W83Cdj1iIR6GEvzleUvdf2zV4KN6saCJDP1ekAs2yY5sGnDiY364WsyHnLqsB33IgA9hIPie6f1gCbJx/L2Ow0ZC4aw+PcjnpAAOfam9ahZa6dsYk8/GvQnTaw+eot3ukU0PYKqxySUHaWB+QwyMKhka5BhRmuDLakBSj/BFsBwt4SuEx+DCnLUP375st6AVedNNLhy6qPe3VO8n5zHhd5ivMo7ylty1Js/4w3T4gopc6PsthzOKW7fViozCyOr7ihV/Adj6KaLIAu6KMJTL+80vZKGuIJqm/Gc4ARBye4ep2gcIxAk2uHOt6z2oeI+AnMMHrwKfRBX1Yn/XgiqV+jDEvAAaUpQVMbhQqVPiQYFmGITYUPjK626Tk2Kq04ULit/PgOKGsEbWgtt27SjQ6fsHBgRZstv321OjERlQLEZl0IalH5zlJ/leblVov5H/A/7H/o/GFkrVe6Hj7cN3r2/07C4d8BPVfUG4UvYu0B7XoTTKBQvTgILkkKgWl1ZeII95O98bdJy+6Y6fmDlb51Xaocv2hU3QDqOGmDnfJm6PNe1hP6x6pJWSEiBbFwE1Lptypq0/jU2kWUoLNhDkPS4AZUzL5Bt+YHaRHDSBhKjb+N2c7H+U0jpsxD/Imn8NZKvzdrGzuo09DDFCJvgDVwXEcOKxvB0IrnZ0UzDHZbzF5JiEhhaTrOlQlHaWpaS0GVp19ozUcDlJtuojBhThsdj6sLDGy/MoCNODT2409BVrVsWGh9kAA==");
+        font-style: normal;
+        font-weight: 400;
+        font-display: swap;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
       :root {
-        --bg: #000000;
-        --text: #e5e5e5;
-        --accent: #ffffff;
-        --code-bg: #111111;
-        --border: #333333;
+        --text: #111;
+        --middle: #555;
+        --bg: #fff;
+        --max-width: 54ch;
+        font-size: 16px;
       }
 
       body {
@@ -24,40 +39,27 @@
         font-family: "CommitMono", monospace;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        font-size: 0.75rem;
-        line-height: 1rem;
+        font-size: 1rem;
+        line-height: 1.5rem;
         font-feature-settings: "ss01", "ss03", "ss04", "ss05";
-        overflow: hidden;
-        margin: 0;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
       }
 
+      /* Layout Containers */
       main {
-        flex: 1;
-        overflow-y: auto;
         padding: 2rem;
-        max-width: 640px;
-        margin: 0 auto;
-        width: 100%;
-        box-sizing: border-box;
       }
 
       header {
         padding: 2rem 2rem 0;
-        max-width: 640px;
-        margin: 0 auto;
-        width: 100%;
-        box-sizing: border-box;
       }
 
+      /* Typography */
       h1 {
         font-size: 1rem;
         line-height: 1.5rem;
         font-weight: 700;
         margin: 0 0 0.5rem 0;
-        color: var(--accent);
+        color: var(--text);
         text-transform: uppercase;
         letter-spacing: 0.05em;
       }
@@ -67,30 +69,32 @@
         margin: 2rem 0 1rem 0;
         color: var(--text);
         font-weight: 700;
-        border-bottom: 1px solid var(--border);
+        border-bottom: 1px solid var(--middle);
         padding-bottom: 0.25rem;
       }
 
       p {
         margin-bottom: 1rem;
-        max-width: 60ch;
       }
 
+      /* Code Styling */
       pre {
-        background: var(--code-bg);
-        padding: 1rem;
-        border-radius: 4px;
-        border: 1px solid var(--border);
-        overflow-x: auto;
+        background: transparent;
+        padding: 0;
+        border: none;
+        overflow: visible;
         margin: 1rem 0;
-        font-size: 0.75rem;
+        font-size: 1rem;
+        white-space: pre;
       }
 
+      /* removed hidden scrollbar styles since pre-wrap makes it not scroll */
       code {
         font-family: inherit;
         color: var(--text);
       }
 
+      /* Links & Lists */
       ul {
         padding-left: 1.5rem;
         margin-bottom: 1rem;
@@ -101,27 +105,26 @@
       }
 
       a {
-        color: var(--accent);
+        color: var(--text);
         text-decoration: none;
-        border-bottom: 1px solid transparent;
+        border-bottom: 1px solid var(--middle);
         transition: border-color 0.2s;
       }
 
       a:hover {
-        border-bottom-color: var(--accent);
+        border-bottom-color: var(--text);
       }
 
       .line-number {
         display: inline-block;
         width: 2em;
-        color: #6c7086;
+        color: var(--middle);
         user-select: none;
         text-align: right;
         padding-right: 1em;
-        opacity: 0.5;
       }
 
-      /* Custom scrollbar for the minimalistic look */
+      /* Scrollbar */
       main::-webkit-scrollbar {
         width: 6px;
         height: 6px;
@@ -132,53 +135,110 @@
       }
 
       main::-webkit-scrollbar-thumb {
-        background: var(--border);
+        background: var(--middle);
         border-radius: 3px;
       }
 
       main::-webkit-scrollbar-thumb:hover {
-        background: #45475a;
+        background: var(--text);
+      }
+
+      /* Loading Screen */
+      #loading {
+        position: fixed;
+        inset: 0;
+        display: grid;
+        place-content: center;
+        background-color: var(--bg);
+        z-index: 200;
+        transition: opacity 0.5s ease-out;
+      }
+
+      #loading p {
+        width: 10ch;
+        font-family: "CommitMonoLoading";
+        font-size: 1rem;
+      }
+
+      #loading p::after {
+        content: "...";
+        animation: 500ms forwards infinite loading_animation;
+      }
+
+      @keyframes loading_animation {
+        0% {
+          content: "";
+        }
+        25% {
+          content: ".";
+        }
+        50% {
+          content: "..";
+        }
+        75% {
+          content: "...";
+        }
+        100% {
+          content: "";
+        }
       }
     </style>
   </head>
   <body>
+    <div id="loading">
+      <p>loading</p>
+    </div>
+
     <header>
-      <h1>Gemini 2.0 Flash / Code Golf</h1>
+      <h1>Code Golf Gemini Terminal Chatbot</h1>
       <p>3 lines. Python. Infinite chat.</p>
     </header>
 
     <main>
       <section>
         <h2>Source</h2>
-        <pre><code><span class="line-number">1</span>from google import genai
-<span class="line-number">2</span>c,h=genai.Client(),[]
-<span class="line-number">3</span>while 1:h+=[{"role":"user","parts":[{"text":input("> ")}]}];r=c.models.generate_content(model="gemini-2.0-flash",contents=h);h+=[r.candidates[0].content];print(r.text)</code></pre>
+        <pre><code><span class="line-number">1</span> from google import genai
+<span class="line-number">2</span> c,h=genai.Client(),[]
+<span class="line-number">3</span> while 1:h+=[{"role":"user","parts":[{"text":input("> ")}]}];r=c.models.generate_content(model="gemini-2.5-flash",contents=h);h+=[r.candidates[0].content];print(r.text)</code></pre>
       </section>
 
       <section>
-        <h2>Logic</h2>
+        <h2>Links</h2>
         <p>
-          A minimal client for the <code>gemini-2.0-flash</code> model using
-          <code>google-genai</code>.
+          <a href="https://github.com/dhavalsingh/code-golf-agent">GitHub</a> ·
+          <a href="https://commitmono.com/">Commit Mono</a> ·
+          <a href="https://x.com/Dhavalsingh7">@Dhavalsingh7</a>
         </p>
-        <ul>
-          <li><strong>L1</strong> Import SDK.</li>
-          <li><strong>L2</strong> Init client & history.</li>
-          <li>
-            <strong>L3</strong> REPL loop: Input → History → Generate → History
-            → Print.
-          </li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Style</h2>
-        <p>
-          Rendered in <strong>Commit Mono</strong> with <code>ss01</code> (smart
-          kerning), <code>ss03</code> (smart spacing), <code>ss04</code> (smart
-          quotes), and <code>ss05</code> (smart dashes).
-        </p>
+        <pre>
+    ,
+   ,-.       _,---._ __  / \
+  /  )    .-'       `./ /   \
+ (  (   ,'            `/    /|
+  \  `-"             \'\   / |
+   `.              ,  \ \ /  |
+    /`.          ,'-`----Y   |
+   (            ;        |   '
+   |  ,-.    ,-'         |  /
+   |  | (   |     LLM    | /
+   )  |  \  `.___________|/
+   `--'   `--'</pre
+        >
       </section>
     </main>
+
+    <script>
+      // Remove loading screen after a short delay to simulate load
+      window.addEventListener("load", () => {
+        setTimeout(() => {
+          const loader = document.getElementById("loading");
+          if (loader) {
+            loader.style.opacity = "0";
+            setTimeout(() => {
+              loader.remove();
+            }, 500);
+          }
+        }, 800);
+      });
+    </script>
   </body>
 </html>

@@ -1,0 +1,2 @@
+- Set your GEMINI_API_KEY environment variable
+- uv run main.py
